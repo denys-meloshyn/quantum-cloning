@@ -1,0 +1,10 @@
+---
+name: "Android Studio"
+sources:
+  -
+    folder: Library/Preferences/AndroidStudio2.3
+  -
+    folder: Library/Preferences/AndroidStudio3.0
+    includeFolders:
+      -
+        folder: codestyles
