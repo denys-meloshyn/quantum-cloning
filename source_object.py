@@ -2,7 +2,7 @@ from constants import Constants
 from node import Node
 
 
-class Source:
+class SourceObject:
     def __init__(self, data):
         self.name = data.get(Constants.Keys.Source.name)
         self.sources = []
