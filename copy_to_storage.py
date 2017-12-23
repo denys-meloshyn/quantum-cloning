@@ -14,8 +14,9 @@ class CopyToStorage:
         config = Config()
 
         backup_sources = []
-        for file_name in os.listdir(Constants.Default.source_folder):
-            file_name = os.path.join(Constants.Default.source_folder, file_name)
+        source_path = os.getcwd()
+        for file_name in os.listdir(source_path):
+            file_name = os.path.join(source_path, file_name)
             file = open(file_name, "r", encoding="utf-8")
             source_config = yaml.load(file)
             source = SourceObject(source_config)
@@ -26,3 +27,6 @@ class CopyToStorage:
                 from_directory = os.path.join(Path.home(), source.folder)
                 destination_directory = os.path.join(config.storage_path, source.folder)
                 copy_tree(from_directory, destination_directory)
+
+
+CopyToStorage()
