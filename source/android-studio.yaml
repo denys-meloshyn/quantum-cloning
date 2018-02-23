@@ -8,3 +8,4 @@ sources:
     includeFolders:
       -
         folder: codestyles
+  - folder: Library/Application Support/AndroidStudio3.0
