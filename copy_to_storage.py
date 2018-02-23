@@ -5,6 +5,7 @@ from pathlib import Path
 import yaml
 
 from config import Config
+from constants import Constants
 from source_object import SourceObject
 
 
@@ -13,7 +14,9 @@ class CopyToStorage:
         config = Config()
 
         backup_sources = []
-        source_path = os.getcwd()
+        file_path = os.path.realpath(__file__)
+        source_path, _ = os.path.split(file_path)
+        source_path = os.path.join(source_path, 'source')
         for file_name in os.listdir(source_path):
             file_name = os.path.join(source_path, file_name)
             file = open(file_name, "r", encoding="utf-8")
